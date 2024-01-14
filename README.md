@@ -1,4 +1,4 @@
-# jwt demo: frontend using vue/vite/pinia and backend real API #
+# jwt demo: backend API for a frontend using vue/vite/pinia #
 
 This is the backend of two apps - an HTML5 frontend paired with a .NET 4.7 backend demonstrating JSON Web Token authentication, generation, and basic use cases.
 
