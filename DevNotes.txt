@@ -1,0 +1,28 @@
+following along from here:
+https://www.c-sharpcorner.com/article/asp-net-web-api-2-creating-and-validating-jwt-json-web-token/
+
+
+Create an ASP.NET Web API application in Visual Studio 2019:
+File -> New Project -> ASP.NET Web Application -> Web API 
+(without  authentication to keep things simple).
+(I also deslected HTTPS)
+
+The above example compiled but when I rand it it bjorked because the key was too short - so I doubled it - and 
+it generated a token OK - of course can't consume it directly on browser but I got this:
+
+eyJqdGkiOiI3OTRkOWQ3MS0xMTAyLTRiMDAtYWI0NC0yNTY0NWYyZmNlN2EiLCJ2YWxpZCI6IjEiLCJ1c2VyaWQiOiIxIiwibmFtZSI6ImJpbGFsIiwiZXhwIjoxNzA0ODE2NTAzLCJpc3MiOiJodHRwOi8vbXlzaXRlLmNvbSIsImF1ZCI6Imh0dHA6Ly9teXNpdGUuY29tIn0
+
+(of course it will be different each run but anyway )
+
+went to here: https://jwt.io/
+
+and with my secret (below) - it validated...
+
+The initial example did not seem to be validating the auth tokens - 
+which I confirmed are indeed in the header... SO...  googling gave
+me some good advice here:
+https://decatechlabs.com/secure-webapi-using-jwt
+
+and now it does.  
+
+The rest is testing and tweaking to get the behavior exactly as desired.
