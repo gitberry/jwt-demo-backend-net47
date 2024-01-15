@@ -23,7 +23,6 @@ namespace FunnySongz
             foreach (var nn in result)
             {
                 nn.RndVal = xRnd.Next(result.Count);
-                //nn.ImportedOn = $"{DateTime.Now}-{xRnd.Next(result.Count)}"; //.ToString();                
                 nn.ImportedOn = $"{DateTime.Now}-{nn.RndVal}"; 
             }
             return result.ToArray();
@@ -31,37 +30,37 @@ namespace FunnySongz
 
         public static FunnySong[] GetFunnySongByID(int givenID)
         {
-            var kludge = new List<FunnySong>();
+            var kludge = new List<FunnySong>(); // super kludgy to return an array instead of an object - wouldn't ACTUALLY do it that way in a serious app...
             var result = GenerateFunnySongsFromJSON(FunnySongsSON).FirstOrDefault(f => f.Id == givenID);
             kludge.Add(result);
-            return kludge.ToArray(); // result;
+            return kludge.ToArray(); 
         }
     }
 
     public class FunnySong
     {
-        public int Id { get; set; } //1
-        public string Title { get; set; } //Ave maria
-        public string SubTitle { get; set; } //
-        public string Composer { get; set; } //Bach
-        public string ComposerPickerID { get; set; } //
-        public string Lyricist { get; set; } //liturgy
-        public string Arranger { get; set; } //
-        public string Publisher { get; set; } //
-        public string CopyrightNumber { get; set; } //
+        public int    Id                     { get; set; } //1
+        public string Title                  { get; set; } //Ave maria
+        public string SubTitle               { get; set; } //
+        public string Composer               { get; set; } //Bach
+        public string ComposerPickerID       { get; set; } //
+        public string Lyricist               { get; set; } //liturgy
+        public string Arranger               { get; set; } //
+        public string Publisher              { get; set; } //
+        public string CopyrightNumber        { get; set; } //
         public string UserPermissionIfNotFGS { get; set; } //none
-        public string PricePerCopy { get; set; } //3.14
-        public string PricePerCopyAsOf { get; set; } //2012-04-23T182543.511Z
-        public string Style { get; set; } //Gothic
-        public string Instrumentation { get; set; } //Organ
-        public string Level { get; set; } //Advanced
-        public string ModifiedBy { get; set; } //Arthur Dent
-        public string ModifiedByUserId { get; set; } //314
-        public string ModifiedOn { get; set; } //2012-04-22T062501.511Z
-        public string CreatedBy { get; set; } //Slarty Bartfast
-        public string CreatedById { get; set; } //42
-        public string CreatedOn { get; set; } //2012-04-23T132302.513Z                        
-        public string ImportedOn { get; set; }
-        public int RndVal { get; set; }
+        public string PricePerCopy           { get; set; } //3.14
+        public string PricePerCopyAsOf       { get; set; } //2012-04-23T182543.511Z
+        public string Style                  { get; set; } //Gothic
+        public string Instrumentation        { get; set; } //Organ
+        public string Level                  { get; set; } //Advanced
+        public string ModifiedBy             { get; set; } //Arthur Dent
+        public string ModifiedByUserId       { get; set; } //314
+        public string ModifiedOn             { get; set; } //2012-04-22T062501.511Z
+        public string CreatedBy              { get; set; } //Slarty Bartfast
+        public string CreatedById            { get; set; } //42
+        public string CreatedOn              { get; set; } //2012-04-23T132302.513Z                        
+        public string ImportedOn             { get; set; }
+        public int    RndVal                 { get; set; }
     }
 }
