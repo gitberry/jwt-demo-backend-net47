@@ -25,7 +25,6 @@ namespace WebApp.Controllers
         [HttpGet]
         public Object authenikait(string username, string password)
         {
-            //todo: is authorized already? is so then do not generate another token...
             if (IsValidJWTToken())
             {
                 // this is an odd situation - and obviously the client code (or user) is doing something that we really don't think is valid 
