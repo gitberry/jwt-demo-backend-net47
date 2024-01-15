@@ -85,7 +85,6 @@ namespace WebApp.Controllers
 
 #if DEBUG
         // this would only be appropriate in a dev/debug/testing environment..
-        //todo: similarly restrict swagger in prod
         [HttpGet]
         public Object GenerateToken(string username, string password)
         {
